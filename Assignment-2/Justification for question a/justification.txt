@@ -1,0 +1,18 @@
+Here is a justification for the actions taken in handling missing values:
+
+Dropping columns with >50% missing values:
+- Columns with a majority of values missing do not contain enough information to be useful in analysis. Imputing so many missing values may distort the distribution.
+- Dropping them entirely avoids introducing substantial bias while retaining other potentially useful columns.
+- Removing non-critical columns with high missingness simplifies the dataset.
+
+Imputing numerical columns with median:
+- Median is less sensitive to outliers compared to mean.
+- For skewed distributions, median gives a more typical "middle" value than mean. 
+- Retains column while replacing missing info with a reasonable estimate of central tendency.
+
+Imputing categorical columns with mode:
+- Mode represents the most common category.
+- Filling missing categorical values with mode preserves distribution of existing values.
+- More reasonable than filling with arbitrary category or median/mean which has no meaning for discrete categories.
+
+In summary, dropping cols with limited data and imputing others retains useful columns while minimizing distortion from missing values. Median and mode fill in missing values while preserving original data distributions. The process balances removing irrecoverable data loss vs imputing reasonable values when possible.
